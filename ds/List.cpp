@@ -16,32 +16,30 @@ template <typename T>
 class SqList
 {
 public:
-	SqList() {}
+	SqList() {};
 	SqList(int size) {
 		m_size = size;
 		elems = new T[size];
 		m_length = 0;
 	}
-	int length()//获取长度
-	{
+	int length() {
 		return m_length;
 	}
-	int size()//获取容量
-	{
+	int size() {
 		return m_size;
 	}
-	void PushBack(T x)//尾插数据
-	{
-		if (m_length != m_size)
+	void PushBack(T x) {
+		if (m_length !=m_size)
 		{
 			elems[m_length] = x;
 			m_length++;
+
 		}
 	}
-	T& operator [](int x)//重载[]，使可以访问赋值
+
+	T& operator [](int x)
 	{
-		if (x >= m_length)
-		{
+		if ( x >= m_length || x < 0) {
 			throw - 1;
 		}
 		else
@@ -49,51 +47,66 @@ public:
 			return elems[x];
 		}
 	}
-	void Insert(int num, T x)//插入数据
-	{
-		if (num >= m_length)
+
+	void Insert(int num, T x) {
+		if (num < 0 || num >= m_length)
 		{
 			throw - 1;
 		}
 		else
 		{
 			m_length++;
-			for (int i = m_length - 1; i > num; i--)
+			for (int i = m_length; i > num;i--)
 			{
 				elems[i] = elems[i - 1];
+
 			}
 			elems[num] = x;
 		}
+
 	}
-	void Delete(int x)//删除数据
-	{
-		if (m_length == x)
+
+	void Delete(int x) {
+		if (x<0||x>=m_length)
+		{
+			throw - 1;
+
+		}
+		else if (x == m_length)
 		{
 			m_length--;
+
 		}
 		else
 		{
-			for (int i = x; i < m_length - 1; i++)
+			
+			for (int i = x; i <= m_length; i++)
 			{
 				elems[i] = elems[i + 1];
+
+
 			}
 			m_length--;
 		}
+
 	}
-	void destroyList()//销毁顺序表
+
+	void destoryList()
 	{
 		delete[]elems;
 		m_length = 0;
 		m_size = 0;
 	}
+
 	~SqList()
 	{
 		delete[]elems;
 	}
 private:
-	T* elems;		//顺序表的基地址
-	int m_length;	//长度
-	int m_size;		//总空间大小
+	T* elems;
+	int m_length;
+	int m_size;
+
 };
 
 int main()
@@ -115,3 +128,4 @@ int main()
 	system("pause");
 	return 0;
 }
+
