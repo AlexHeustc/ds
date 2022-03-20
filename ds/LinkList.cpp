@@ -45,3 +45,21 @@ bool Push_back(Linklist*& L, LinkNode* node) {
 	return true;
 }
 
+//任意位置插入
+bool ListInsert(Linklist*& L, int i, int& e) {
+	if (!L)
+	{
+		return false;
+	}
+
+	int j = 0;
+	Linklist* p = L;
+
+	while (p && j != i - 1) {//查找第i-1个节点，使p指向该节点
+
+		p = p->next;
+		j++;
+	}
+
+
+}
