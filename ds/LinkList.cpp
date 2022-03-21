@@ -61,5 +61,66 @@ bool ListInsert(Linklist*& L, int i, int& e) {
 		j++;
 	}
 
+	if (!p || j > i - 1)
+	{
+		return false;
+
+	}
+
+	//生成新的节点
+	Linklist* s = new LinkNode;
+	s->data = e;
+	s->next = p->next;
+	p->next = s;
 
 }
+
+//打印
+void ListPrint(Linklist*& L) {
+
+	if (!L)
+	{
+		cout << "链表为空！" << endl;
+		return;
+	}
+
+	Linklist* p = NULL;
+	p = L;
+	while (!p)
+	{
+		cout << p->data << " ";
+		p = p->next;
+	}
+	cout << endl;
+
+}
+
+//取出位置为i的元素
+bool Link_elem(Linklist*& L,int i,int &e) {
+
+	if (!L || !L->next)
+	{
+		return false;
+	}
+
+	int j = 1;
+	Linklist* p = L->next;
+
+	while (p && j < i) 
+	{
+		p = p->next;
+		j++;
+	}
+	if (!p || j > i)
+	{
+		return false;
+	}
+	e = p->data;
+	return true;
+
+	
+
+}
+
+
+
