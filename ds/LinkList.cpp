@@ -118,9 +118,132 @@ bool Link_elem(Linklist*& L,int i,int &e) {
 	e = p->data;
 	return true;
 
+}
+bool Linkfind(Linklist*& L, int e) {
 	
+	if (!L) return false;
+	Linklist* p = L;
+	
+	while (p && p->data !=e)
+	{
+		p = p->next;
+
+
+	}
+	if (!p) return false;
+
+	return true;
+	
+}
+//删除元素
+bool LinkDelete(Linklist*& L, int i)
+{
+	if (!L)
+	{
+		return false;
+	}
+	int j = 0;
+
+	Linklist* p = L;
+	while (!p && j<i-1)
+	{
+		p = p->next;
+	}
+	if (!(p->next) || (j > i - 1))
+	{
+		return false;
+	}
+	Linklist* s = p->next;
+	p->next = s;
+	delete s;
+	return true;
+}
+
+//单链表销毁
+bool LinkDestory(Linklist*& L)
+{
+	if (!L)
+	{
+		return false;
+	}
+	Linklist* p=L;
+	while (p)
+	{
+		L = L->next;
+		delete p;
+		p = L;
+	}
 
 }
+
+int main()
+{
+	Linklist* L = NULL;
+	Linklist* s = NULL;
+	//初始化
+	InitList(L);
+	//头插法插入
+	int n = 0;
+	cout << "请输入要插入的元素个数：" << endl;
+	cin >> n;
+	cout << "请依次输入" << n << "个元素：" << endl;
+	while (n > 0)
+	{
+		s = new LinkNode;	//生成新的节点s
+		cin >> s->data;
+		Push_front(L, s);
+		n--;
+	}
+	//打印
+	ListPrint(L);
+	cout << "---------------------" << endl;
+
+	//尾插法插入
+	cout << "请输入要插入的元素个数：" << endl;
+	cin >> n;
+	cout << "请依次输入" << n << "个元素：" << endl;
+	while (n > 0)
+	{
+		s = new LinkNode;	//生成新的节点s
+		cin >> s->data;
+		Push_back(L, s);
+		n--;
+	}
+	//打印
+	ListPrint(L);
+
+	//任意位置插入
+	int x = 0;
+	cout << "请输入要插入的位置：" << endl;
+	cin >> n;
+	cout << "请输入元素：" << endl;
+	cin >> x;
+	ListInsert(L, n, x);
+	ListPrint(L);
+
+	//取出元素
+	cout << "请输入要取出第几位元素：" << endl;
+	cin >> n;
+	int a = 0;
+	Link_elem(L, n, a);
+	cout << "取出的第" << n << "位元素为：" << a << endl;
+
+	//删除元素
+	cout << "请输入要删除第几个元素：" << endl;
+	cin >> n;
+	LinkDelete(L, n);
+	ListPrint(L);
+
+	//销毁链表
+	LinkDestory(L);
+
+
+	system("pause");
+	return 0;
+}
+
+
+
 
 
 
