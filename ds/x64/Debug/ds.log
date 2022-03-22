@@ -1,6 +1,0 @@
-﻿  LinkList.cpp
-D:\codes\C++\ds\ds\LinkList.cpp(28): warning C4715: “Push_front”: 不是所有的控件路径都返回值
-D:\codes\C++\ds\ds\LinkList.cpp(76): warning C4715: “ListInsert”: 不是所有的控件路径都返回值
-D:\codes\C++\ds\ds\LinkList.cpp(177): warning C4715: “LinkDestory”: 不是所有的控件路径都返回值
-List.obj : error LNK2005: main 已经在 LinkList.obj 中定义
-D:\codes\C++\ds\x64\Debug\ds.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

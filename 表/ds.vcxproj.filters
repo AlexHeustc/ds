@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\链表">
+      <UniqueIdentifier>{70ccf3d5-cde1-4a32-992a-066dfa8fc300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\单链表无头节点">
+      <UniqueIdentifier>{cabd01e3-716c-4c45-9b4e-2ac220e61596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\线性表">
+      <UniqueIdentifier>{e3d405f5-1a1f-4bc4-942b-02b63800f698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\栈">
+      <UniqueIdentifier>{cabe4f9b-1252-4f16-8ab0-305b1347b3d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LinkList.cpp">
+      <Filter>源文件\链表</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件\单链表无头节点</Filter>
+    </ClCompile>
+    <ClCompile Include="checklist.cpp">
+      <Filter>源文件\单链表无头节点</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>源文件\线性表</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>源文件\栈</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sll_node.h">
+      <Filter>源文件\单链表无头节点</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

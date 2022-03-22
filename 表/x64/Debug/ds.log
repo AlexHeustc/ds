@@ -1,0 +1,6 @@
+﻿List.obj : error LNK2005: main 已经在 LinkList.obj 中定义
+Stack.obj : error LNK2005: main 已经在 LinkList.obj 中定义
+Stack.obj : error LNK2019: 无法解析的外部符号 "bool __cdecl is_empty(struct Stack *)" (?is_empty@@YA_NPEAUStack@@@Z)，函数 "void __cdecl clear_stack(struct Stack *)" (?clear_stack@@YAXPEAUStack@@@Z) 中引用了该符号
+    已定义且可能匹配的符号上的提示:
+      "bool __cdecl is_empty(struct Stack)" (?is_empty@@YA_NUStack@@@Z)
+D:\codes\C++\ds\x64\Debug\ds.exe : fatal error LNK1120: 1 个无法解析的外部命令
