@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6b96481c-a8aa-48c6-9e6c-ee96a269370c": {
+      "ProjectGuid": "6b96481c-a8aa-48c6-9e6c-ee96a269370c",
+      "DisplayName": "队列",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
