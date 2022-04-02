@@ -17,16 +17,16 @@ void in_traverse(BTree);
 void beh_traverse(BTree);
 
 //定义栈的表示方法
-typedef struct Node
+typedef struct NODE
 {
 	BTree data;
-	struct Node* pnext;
-}NODE,*PNODE;
+	struct NODE *pNext;
+}BNODE,*PNODE;
 
-typedef struct Stack
+typedef struct STACK
 {
-	PNODE ptop;
-	PNODE pbottom;
+	PNODE pTop;
+	PNODE pBottom;
 }STACK,*PSTACK;
 
 //创建空栈的函数
