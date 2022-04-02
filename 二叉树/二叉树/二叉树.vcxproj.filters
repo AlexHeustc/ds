@@ -23,5 +23,11 @@
     <ClCompile Include="tree_method.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="stack_method.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="traverse_tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

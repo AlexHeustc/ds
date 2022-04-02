@@ -22,6 +22,8 @@
     <ClInclude Include="data_structure.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="stack_method.cpp" />
+    <ClCompile Include="traverse_tree.cpp" />
     <ClCompile Include="tree_method.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

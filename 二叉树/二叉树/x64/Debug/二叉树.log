@@ -1,0 +1,5 @@
+﻿  stack_method.cpp
+D:\codes\C++\ds\二叉树\二叉树\stack_method.cpp(76,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“BTree”
+D:\codes\C++\ds\二叉树\二叉树\stack_method.cpp(76,10): warning C4313: “printf”: 格式字符串中的“%d”与“BTree”类型的参数 1 冲突
+MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 main，函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中引用了该符号
+D:\codes\C++\ds\二叉树\x64\Debug\二叉树.exe : fatal error LNK1120: 1 个无法解析的外部命令

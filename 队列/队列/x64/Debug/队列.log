@@ -1,0 +1,4 @@
+﻿  Queue.cpp
+Queue.obj : error LNK2019: 无法解析的外部符号 "void __cdecl destroy_queue(struct Queue *)" (?destroy_queue@@YAXPEAUQueue@@@Z)，函数 main 中引用了该符号
+Queue.obj : error LNK2019: 无法解析的外部符号 "void __cdecl traverse_queue(struct Queue *)" (?traverse_queue@@YAXPEAUQueue@@@Z)，函数 main 中引用了该符号
+D:\codes\C++\ds\队列\x64\Debug\队列.exe : fatal error LNK1120: 2 个无法解析的外部命令
