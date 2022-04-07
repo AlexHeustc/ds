@@ -93,3 +93,23 @@ void in_traverse(BTree pTree)
 		
 	}
 }
+/*后序遍历的非递归实现*/
+void beh_traverse(BTree pTree)
+{
+	PSTACK stack = create_stack();
+	BTree node_pop;
+	BTree pCur;
+	BTree pPre = NULL;
+
+	push_stack(stack, pTree);
+
+	while (!is_empty(stack))
+	{
+		pCur = getTop(stack);
+		if ((pCur->pLchild == NULL && pCur->pRchild == NULL) || 
+			(pPre!= NULL && (pCur->pLchild==pPre)))
+		{
+
+		}
+	}
+}
