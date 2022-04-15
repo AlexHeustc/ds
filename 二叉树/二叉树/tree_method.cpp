@@ -35,23 +35,22 @@ BTree create_tree()
 /*
 前序遍历的非递归实现
 */
+//当栈不为空时，栈顶元素出栈，如果其右孩子不为空，
+//则右孩子入栈，其左孩子不为空，则左孩子入栈
 void pre_traverse(BTree pTree)
 {
-	PSTACK stack = create_stack();//创建一个空栈
-	BTree node_pop;//用来保存出栈数据
-	BTree pCur = pTree;//定义用来指向当前访问节点的指针
-
-	//直到当前节点pCur为NULL且栈为空，循环结束
+	PSTACK stack = create_stack();
+	BTree node_pop;
+	BTree pCur = pTree;
 	while (pCur || !is_empty(stack))
 	{
-		//从根节点开始，输出当前节点，并将其入栈，
-		//同时置其左孩子为当前节点，直至其没有左孩子，直到前节点为NULL
-		printf("%c", pCur->data);
-		push_stack(stack, pCur);
-		pCur = pCur->pLchild;
-		//如果当前节点pCur为NULL且栈不空，则将栈顶节点出栈，
-		//同时置其右孩子为当前节点,循环判断，直至pCur不为空
-		while (!pCur || !is_empty(stack))
+		if (pCur)
+		{
+			printf("%c", pCur->data);
+			push_stack(stack, pCur);
+			pCur = pCur->pLchild;
+		}
+		else
 		{
 			pCur = getTop(stack);
 			pop_stack(stack, &node_pop);
@@ -69,47 +68,63 @@ void in_traverse(BTree pTree)
 	BTree node_pop;
 	BTree pCur = pTree;
 
-	while (pCur || !is_empty(stack))
+	while (pCur != NULL || !is_empty(stack))
 	{
-		if (pCur->pLchild)
+		if (pCur)
 		{
-			push_stack(stack, pCur->pLchild);
+			push_stack(stack, pCur);
 			pCur = pCur->pLchild;
 		}
 		else
 		{
+			pCur = getTop(stack);
 			printf("%c", pCur->data);
+			pop_stack(stack, &node_pop);
 			pCur = pCur->pRchild;
-			//如果为空，且栈不空，则将栈顶节点出栈，并输出该节点，
-			//同时将它的右孩子设为当前节点，继续判断，直到当前节点不为空
-			while (!pCur && !is_empty(stack))
-			{
-				pCur = getTop(stack);
-				printf("%c", pCur->data);
-				pop_stack(stack, &node_pop);
-				pCur = pCur->pRchild;
-			}
 		}
-		
 	}
 }
-/*后序遍历的非递归实现*/
+/*
+后序遍历的非递归实现
+
+后序遍历的难点在于：需要判断上次访问的节点是位于左子树，还是右子树。
+若是位于左子树，则需跳过根节点，先进入右子树，再回头访问根节点；
+若是位于右子树，则直接访问根节点。
+*/
 void beh_traverse(BTree pTree)
 {
 	PSTACK stack = create_stack();
 	BTree node_pop;
-	BTree pCur;
+	BTree pCur ;
 	BTree pPre = NULL;
 
-	push_stack(stack, pTree);
-
+	
+	pCur = pTree;
+	while (pCur)
+	{
+		pCur = pCur->pLchild;
+	}
 	while (!is_empty(stack))
 	{
 		pCur = getTop(stack);
-		if ((pCur->pLchild == NULL && pCur->pRchild == NULL) || 
-			(pPre!= NULL && (pCur->pLchild==pPre)))
+		pop_stack(stack, &node_pop);
+		if (pCur->pRchild == NULL || pCur->pRchild == pPre)
 		{
-
+			
+			printf("%c", pCur->data);
+			pPre = pCur;
 		}
+		else
+		{
+			push_stack(stack, pCur);
+			pCur = pCur->pRchild;
+			while (pCur)
+			{
+				push_stack(stack, pCur);
+				pCur = pCur->pLchild;
+
+			}
+		}
+
 	}
 }
